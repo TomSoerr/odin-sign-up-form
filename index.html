@@ -14,27 +14,59 @@
     </div>
     <div id="form">
         <p class="text">
-            This is not a real online service!
-            You know you Lorem, ipsum dolor sit 
-            amet consectetur adipisicing elit. 
-            Reiciendis impedit omnis molestias 
-            quod voluptates explicabo dignissimos. 
-            In architecto accusantium mollitia? Sed 
-            vero dolores voluptatem quisquam molestias, 
-            atque ad fuga dolor.
-            <br><br>
+            This is not a real online service! You know you need something
+            like this in your life to help you realize your deepest dreams. <br>
+            Sign up now to get started.
+            <br> 
+            <br>
             You know you want to.
         </p>
         <form id="user-input" class="text-mono">
 
+            <p class="text">
+                Let's do this!
+            </p>
+            <p class="text-mono">
+                Required fields are marked with an asterisk (*).
+            </p>
 
-            <input placeholder="Tom" type="text" id="first-name" name="first-name" required>
 
-            <input type="text">
-            <input type="text">
-            <input type="">
-            <input type="password">
-            <input type="password">  
+            <div class="row">
+                <div>
+                    <input type="text" id="first-name" name="first-name" required>
+                    <label for="first-name">First Name*</label>
+                    <span></span>
+                </div>
+                <div>
+                    <input type="text">
+                    <label for="last-name">Last Name*</label>
+                    <span></span>
+                </div>
+            </div>
+            <div class="row">
+                <div>
+                    <input type="text">
+                    <label for="email">E-Mail*</label>
+                    <span></span>
+                </div>
+                <div>
+                    <input type="text">
+                    <label for="phone">Phone Number</label>
+                    <span></span>
+                </div>
+            </div>
+            <div class="row">
+                <div>
+                    <input type="password">
+                    <label for="password">Password*</label>
+                    <span></span>
+                </div>
+                <div>
+                    <input type="password">
+                    <label for="confirm-password">Confirm Password*</label>
+                    <span></span>
+                </div>
+            </div>
         </form>
         <button form="user-input" type="submit" class="signup text-mono">Sign Up</button>
         <p class="text">Already have an account? <a href="">Log in</a></p>
