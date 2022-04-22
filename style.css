@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Space+Grotesk:wght@300&family=Space+Mono&display=swap');
+
+:root {
+    --backup-font-stack: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+    --dark-color: rgb(21, 16, 33);
+    --dark-color-transparent: rgba(28, 28, 28, 0.437);
+    --not-so-dark-color: rgb(36, 28, 45);
+    --text-color: rgb(231, 235, 239);
+    --shadow: rgba(231, 235, 239, 0.24);
+    font-size: 16px;
+}
+
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+/* font style */
+
+#vertex {
+    font-size: 7rem;
+    line-height: 1.1em;
+    margin: 0;
+    font-family: 'Monoton', var(--backup-font-stack);
+}
+
+#logo > p.text-mono {
+    font-size: 3vh;
+    line-height: 1.1em;
+    margin: 0;
+}
+
+
+.text {
+    font-family: 'Space Grotesk' ,var(--backup-font-stack);
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.text-mono,
+.text-mono#user-input > input {
+    font-family: 'Space Mono', var(--backup-font-stack);
+    font-size: 1.3rem;
+}
+
+/* layout */
+
+#sidebar {
+    background: left / cover url(./picture.jpg) rgb(80, 25, 90) no-repeat;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+}
+
+#logo {
+    margin-top: calc(100vh / 4);
+    text-align: center;
+    padding: 0.5rem 2rem;
+    background-color: var(--dark-color-transparent);
+    color: var(--text-color);
+}
+
+#form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    background-color: var(--dark-color);
+    color: var(--text-color);
+    width: 100%;
+}
+
+#form > * {
+    padding-left: 4rem;
+    padding-right: 4rem;
+    margin: 0;
+}
+
+#form p:first-child.text {
+    max-width: 60ch;
+}
+
+#form form {
+    background-color: var(--not-so-dark-color);
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    box-shadow: 0 3px 10px 0px var(--shadow);
+}
+
+#form #user-input input {
+    margin: 0;
+    padding: 0.3rem;
+    border: thin solid var(--dark-color);
+    border-radius: 0.5rem;
+}
+
+#form button[form="user-input"] {
+    appearance: none;
+    width: 15rem;
+    padding: 0;
+    margin-left: 4rem;
+    height: 3rem;
+    color: var(--not-so-dark-color);
+    background-color: var(--text-color);
+    border: thin solid transparent;
+    border-radius: 0.5rem;
+    outline: none;
+}
+
+
+
+/* style */
+
+#user-input > input {
+    appearance: none;
+}
+
