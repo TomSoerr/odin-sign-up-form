@@ -2,11 +2,14 @@
 
 :root {
     --backup-font-stack: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
-    --dark-color: rgb(21, 16, 33);
-    --dark-color-transparent: rgba(28, 28, 28, 0.437);
-    --not-so-dark-color: rgb(36, 28, 45);
-    --text-color: rgb(231, 235, 239);
-    --shadow: rgba(231, 235, 239, 0.24);
+    --dark-color: rgb(0, 0, 0);
+    --dark-color-transparent: #dfdfdf7e;
+    --text-color: rgb(255, 255, 255);
+    --color-1: #fef200;
+    --color-2: #ff0078;
+    --color-3: #0201ff;
+    --color-4: #dfdfdf;
+    --color-5: rgb(55, 255, 45);
     font-size: 16px;
 }
 
@@ -22,6 +25,25 @@ body {
 
 /* font style */
 
+::selection {
+    background-color: var(--color-3);
+}
+
+a {
+    color: var(--dark-color);
+    background-color: var(--text-color);
+    text-decoration: none;
+}
+
+a:hover {
+    background-color: var(--color-4);
+}
+
+a:active {
+    background-color: var(--dark-color);
+    color: var(--text-color);
+}
+
 #vertex {
     font-size: 7rem;
     line-height: 1.1em;
@@ -32,7 +54,6 @@ body {
 #logo > p.text-mono {
     font-size: 3vh;
     line-height: 1.1em;
-    margin: 0;
 }
 
 
@@ -40,12 +61,14 @@ body {
     font-family: 'Space Grotesk' ,var(--backup-font-stack);
     font-size: 1.8rem;
     font-weight: 600;
+    margin: 0;
 }
 
 .text-mono,
-.text-mono#user-input > input {
+.text-mono#user-input input {
     font-family: 'Space Mono', var(--backup-font-stack);
     font-size: 1.3rem;
+    margin: 0;
 }
 
 /* layout */
@@ -62,7 +85,7 @@ body {
     text-align: center;
     padding: 0.5rem 2rem;
     background-color: var(--dark-color-transparent);
-    color: var(--text-color);
+    color: var(--dark-color);
 }
 
 #form {
@@ -77,48 +100,107 @@ body {
     width: 100%;
 }
 
+#form #user-input p,
+#form button[form="user-input"],
+#form #user-input input,
+#form #user-input label {
+    color: var(--dark-color);
+    background-color: var(--text-color);
+}
+
 #form > * {
     padding-left: 4rem;
     padding-right: 4rem;
-    margin: 0;
 }
 
-#form p:first-child.text {
+#form p:first-child {
     max-width: 60ch;
 }
 
-#form form {
-    background-color: var(--not-so-dark-color);
+#form #user-input {
+    background-color: var(--text-color);
     padding-top: 4rem;
     padding-bottom: 4rem;
-    box-shadow: 0 3px 10px 0px var(--shadow);
+    padding-right: calc(4rem - 10px);
+    margin-right: 10px;
+    box-shadow: 10px 10px 0px 0px var(--color-5);
 }
 
+#form #user-input .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem max(min(8rem, 10%), 2rem);
+}
+
+#form #user-input > *:not(:first-child) {
+    margin-top: 2rem;
+}
+
+#form #user-input .row div {
+    position: relative;
+}
+
+#form #user-input p:first-child {
+    font-size: 2.2rem;;
+}
+#form #user-input p:nth-child(2) {
+    font-size: 0.9rem;
+}
 #form #user-input input {
     margin: 0;
-    padding: 0.3rem;
-    border: thin solid var(--dark-color);
-    border-radius: 0.5rem;
+    appearance: none;
+    padding: 1.3rem 0.7rem 0.3rem 0.7rem;
+    border: 2px solid var(--dark-color);
+    width: 20rem;
+    outline: none;
+    line-height: 0em;
+    box-shadow: 5px 5px var(--color-3);
+
 }
+
+#form #user-input input:hover {
+    background-color: var(--color-4);
+}
+
+#form #user-input input:focus {
+    background-color: var(--dark-color);
+    color: var(--text-color);
+}
+
+#form #user-input input:focus + label {
+    color: var(--text-color);
+}
+
+#form #user-input label {
+    line-height: 1em;
+    position: absolute;
+    top: 0.3rem;
+    left: 0.7rem;
+    font-size: 0.9rem;
+    color: var(--dark-color);
+    background-color: transparent;
+}
+
+
 
 #form button[form="user-input"] {
     appearance: none;
+    position: relative;
     width: 15rem;
-    padding: 0;
+    padding: 0.7rem;
     margin-left: 4rem;
-    height: 3rem;
-    color: var(--not-so-dark-color);
-    background-color: var(--text-color);
-    border: thin solid transparent;
-    border-radius: 0.5rem;
+    border: 2px solid var(--text-color);
     outline: none;
+    box-shadow: 5px 5px var(--color-2);
 }
 
+#form button[form="user-input"]:hover {
+    background-color: #dfdfdf;
+}
 
-
-/* style */
-
-#user-input > input {
-    appearance: none;
+#form button[form="user-input"]:active,
+#form button[form="user-input"]:focus        {
+    background-color: var(--dark-color);
+    color: var(--text-color);
 }
 
