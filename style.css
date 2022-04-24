@@ -55,7 +55,7 @@ a:active {
 }
 
 #logo > p.text-mono {
-    font-size: 3vh;
+    font-size: 2rem;
     line-height: 1.1em;
 }
 
@@ -148,10 +148,10 @@ a:active {
 #form #user-input p:first-child {
     font-size: 2.2rem;;
 }
-#form #user-input p:nth-child(2),
-#form #user-input label[for="news"] {
-    font-size: 0.9rem;
 
+#form #user-input p:nth-child(2),
+#form #user-input div.checkbox {
+    font-size: 0.9rem;
 }
 
 /* user input */
@@ -227,7 +227,50 @@ a:active {
 
 /* checkbox */
 
+#form #user-input input[type="checkbox"] {
+    appearance: none;
+    position: relative;
+    border: solid 2px var(--dark-color);
+    height: 0.9rem;
+    width: 0.9rem;
+    overflow: hidden;
+}
 
+#form #user-input input[type="checkbox"]::before {
+    content: "";
+    position: absolute;
+    background-color: var(--color-5);
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all 0s;
+}
+
+#form #user-input input[type="checkbox"]:checked::before {
+    opacity: 1;
+}
+
+#form #user-input input[type="checkbox"]::after {
+    content: "";
+    position: absolute;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    transition: all 0.3s ease;
+}
+
+#form #user-input input[type="checkbox"]:checked::after {
+    box-sizing: border-box;
+    overflow: hidden;
+    height: 50%;
+    width: 50%;
+    top: 25%;
+    left: 25%;
+    background-color: var(--dark-color);
+}
 
 /* button */
 
@@ -250,8 +293,3 @@ a:active {
     background-color: var(--dark-color);
     color: var(--text-color);
 }
-
-
-/*
-
-please add a custom checkbox*/
