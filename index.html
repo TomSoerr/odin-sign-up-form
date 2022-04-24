@@ -15,7 +15,8 @@
     <div id="form">
         <p class="text">
             This is not a real online service! You know you need something
-            like this in your life to help you realize your deepest dreams. <br>
+            like this in your life to help you realize your deepest dreams. 
+            <br>
             Sign up now to get started.
             <br> 
             <br>
@@ -26,47 +27,104 @@
             <p class="text">
                 Let's do this!
             </p>
-            <p class="text-mono">
+            <p>
                 Required fields are marked with an asterisk (*).
             </p>
 
 
             <div class="row">
                 <div>
-                    <input type="text" id="first-name" name="first-name" required>
+                    <input 
+                        type="text" 
+                        id="first-name" 
+                        name="first-name" 
+                        title="Please enter a valid first name, example: John"
+                        oninvalid="setCustomValidity('Please enter a valid first name, example: John')"
+                        pattern="\w{2,}"
+                        placeholder=" "
+                        required 
+                        autofocus
+                    >
                     <label for="first-name">First Name*</label>
                     <span></span>
                 </div>
                 <div>
-                    <input type="text">
+                    <input 
+                        type="text" 
+                        id="last-name" 
+                        name="last-name" 
+                        title="Please enter a valid last name, example: Smith"
+                        oninvalid="setCustomValidity('Please enter a valid last name, example: Smith')"
+                        pattern="\w{3,}"
+                        placeholder=" "
+                        required
+                    >
                     <label for="last-name">Last Name*</label>
                     <span></span>
                 </div>
             </div>
             <div class="row">
                 <div>
-                    <input type="text">
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        title="Please enter a valid email address, example: name@company.com"
+                        oninvalid="setCustomValidity('Please enter a valid email address, example: name@company.com')"
+                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                        placeholder=" "
+                        required
+                    >
                     <label for="email">E-Mail*</label>
                     <span></span>
                 </div>
                 <div>
-                    <input type="text">
+                    <input 
+                        type="text" 
+                        d="phone" 
+                        name="phone" 
+                        inputmode="numeric"
+                        title="Please enter a valid phone number, example: 012345678901"
+                        oninvalid="setCustomValidity('Please enter a valid phone number, example: 012345678901')"
+                        pattern="\d{11,12}"
+                        placeholder=" "
+                    >
                     <label for="phone">Phone Number</label>
                     <span></span>
                 </div>
             </div>
             <div class="row">
                 <div>
-                    <input type="password">
+                    <input 
+                        type="password" 
+                        id="password" 
+                        name="password"
+                        title="Please enter a valid password with UpperCase, LowerCase, Number/SpecialChar and min 8 Chars"
+                        oninvalid="setCustomValidity('Please enter a valid password with UpperCase, LowerCase, Number/SpecialChar and min 8 Chars')"
+                        pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
+                        placeholder=" "
+                        required
+                    >
                     <label for="password">Password*</label>
                     <span></span>
                 </div>
                 <div>
-                    <input type="password">
+                    <input 
+                        type="password" 
+                        id="confirm-password" 
+                        name="confirm-password"
+                        title="Please enter the same password as before"
+                        oninvalid="setCustomValidity('Please enter the same password as before')"
+                        pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
+                        placeholder=" "
+                        required
+                        >
                     <label for="confirm-password">Confirm Password*</label>
                     <span></span>
                 </div>
             </div>
+            <input type="checkbox" id="news" name="news">
+            <label  for="news">Do you want to subscribe to our newsletter?</label>
         </form>
         <button form="user-input" type="submit" class="signup text-mono">Sign Up</button>
         <p class="text">Already have an account? <a href="">Log in</a></p>

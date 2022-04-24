@@ -23,20 +23,23 @@ body {
     display: flex;
 }
 
-/* font style */
+/* font and link style */
 
 ::selection {
     background-color: var(--color-3);
 }
 
 a {
-    color: var(--dark-color);
-    background-color: var(--text-color);
-    text-decoration: none;
+    color: var(--text-color);
+    border: 2px solid transparent;
+
 }
 
 a:hover {
-    background-color: var(--color-4);
+    color: var(--dark-color);
+    background-color: var(--text-color);
+    border: 2px solid var(--text-color);
+    text-decoration: none;
 }
 
 a:active {
@@ -71,7 +74,7 @@ a:active {
     margin: 0;
 }
 
-/* layout */
+/* logo slide */
 
 #sidebar {
     background: left / cover url(./picture.jpg) rgb(80, 25, 90) no-repeat;
@@ -87,6 +90,8 @@ a:active {
     background-color: var(--dark-color-transparent);
     color: var(--dark-color);
 }
+
+/* form slide */
 
 #form {
     display: flex;
@@ -126,7 +131,7 @@ a:active {
     box-shadow: 10px 10px 0px 0px var(--color-5);
 }
 
-#form #user-input .row {
+#form #user-input div.row {
     display: flex;
     flex-wrap: wrap;
     gap: 2rem max(min(8rem, 10%), 2rem);
@@ -136,17 +141,22 @@ a:active {
     margin-top: 2rem;
 }
 
-#form #user-input .row div {
+#form #user-input div.row div {
     position: relative;
 }
 
 #form #user-input p:first-child {
     font-size: 2.2rem;;
 }
-#form #user-input p:nth-child(2) {
+#form #user-input p:nth-child(2),
+#form #user-input label[for="news"] {
     font-size: 0.9rem;
+
 }
-#form #user-input input {
+
+/* user input */
+
+#form #user-input div.row input {
     margin: 0;
     appearance: none;
     padding: 1.3rem 0.7rem 0.3rem 0.7rem;
@@ -158,20 +168,22 @@ a:active {
 
 }
 
-#form #user-input input:hover {
+#form #user-input div.row input:hover {
     background-color: var(--color-4);
 }
 
-#form #user-input input:focus {
+#form #user-input div.row input:focus {
     background-color: var(--dark-color);
     color: var(--text-color);
 }
 
-#form #user-input input:focus + label {
+#form #user-input div.row input:focus + label {
     color: var(--text-color);
 }
 
-#form #user-input label {
+/* label */
+
+#form #user-input div.row label {
     line-height: 1em;
     position: absolute;
     top: 0.3rem;
@@ -182,10 +194,45 @@ a:active {
 }
 
 
+/* span */
+
+
+#form #user-input div.row span {
+    height: 0;
+    color: var(--dark-color);
+    position: absolute;
+    font-size: 0.9rem;
+    line-height: 1em;
+    right: 0;
+    top: 0;
+}
+
+#form #user-input div.row input ~ span::before {
+    display: inline-block;
+    padding: 0.3rem;
+    border: 2px solid var(--dark-color);
+    transform: translate(10px, -10px);
+}
+
+
+#form #user-input div.row input:valid:not(:placeholder-shown) ~ span::before {
+    content: "Valid";
+    background-color: var(--color-5);
+}
+
+#form #user-input div.row input:focus:invalid ~ span::before {
+    content: "Invalid";
+    background-color: var(--color-1);
+}
+
+/* checkbox */
+
+
+
+/* button */
 
 #form button[form="user-input"] {
     appearance: none;
-    position: relative;
     width: 15rem;
     padding: 0.7rem;
     margin-left: 4rem;
@@ -204,3 +251,7 @@ a:active {
     color: var(--text-color);
 }
 
+
+/*
+
+please add a custom checkbox*/
