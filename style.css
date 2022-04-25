@@ -33,10 +33,11 @@ body {
 a {
     color: var(--text-color);
     border: 2px solid transparent;
-
+    outline: none;
 }
 
-a:hover {
+a:hover,
+a:focus {
     color: var(--dark-color);
     background-color: var(--text-color);
     border: 2px solid var(--text-color);
@@ -252,6 +253,12 @@ a:active {
     height: 0.9rem;
     width: 0.9rem;
     overflow: hidden;
+    outline: hidden;
+}
+
+#form #user-input input[type="checkbox"]:focus {
+    transform: scale(1.2);
+    outline: 0;
 }
 
 #form #user-input input[type="checkbox"]::before {

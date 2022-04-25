@@ -128,18 +128,19 @@
          </div>
         </form>
         <button form="user-input" type="submit" class="signup text-mono">Sign Up</button>
-        <p class="text">Already have an account? <a href="">Log in</a></p>
+        <p class="text">Go back to <a href="https://github.com/TomSoerr/odin-sign-up-form">GitHub</a>?</p>
     </div>
     <!-- password strength validation with js -->
     <script>
         const infoBox = document.querySelector('input#password ~ span', ':after');
-        const dataset = infoBox.dataset
+        const dataset = infoBox.dataset;
         const passwdBox = document.querySelector('input#password');
         passwdBoxConfirm = document.querySelector('input#confirm-password');
         dataset.content = '- At least 2 numbers\n- At least 10 characters\n- At least 2 uppercase letters\n- At least 2 lowercase letters\n- At least 2 special characters\n';
 
+        
         passwdBox.addEventListener('input', (e) => {
-            const value = inputBox.value;
+            const value = passwdBox.value;
             dataset.content = '';
 
             if (!value.match(/(?=(?:.*\d){2,}).*/)) {
