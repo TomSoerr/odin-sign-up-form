@@ -21,6 +21,7 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
+    background-color: var(--dark-color);
 }
 
 /* font and link style */
@@ -62,7 +63,7 @@ a:active {
 
 .text {
     font-family: 'Space Grotesk' ,var(--backup-font-stack);
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     font-weight: 600;
     margin: 0;
 }
@@ -124,8 +125,8 @@ a:active {
 
 #form #user-input {
     background-color: var(--text-color);
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
     padding-right: calc(4rem - 10px);
     margin-right: 10px;
     box-shadow: 10px 10px 0px 0px var(--color-5);
@@ -193,9 +194,7 @@ a:active {
     background-color: transparent;
 }
 
-
 /* span */
-
 
 #form #user-input div.row span {
     height: 0;
@@ -208,21 +207,40 @@ a:active {
 }
 
 #form #user-input div.row input ~ span::before {
+    position: absolute;
+    right: 0;
+    top: 0;
     display: inline-block;
     padding: 0.3rem;
     border: 2px solid var(--dark-color);
     transform: translate(10px, -10px);
 }
 
-
 #form #user-input div.row input:valid:not(:placeholder-shown) ~ span::before {
     content: "Valid";
     background-color: var(--color-5);
 }
 
+
 #form #user-input div.row input:focus:invalid ~ span::before {
     content: "Invalid";
     background-color: var(--color-1);
+}
+
+#form #user-input div.row input#password ~ span::after {
+    position: absolute;
+    display: block;
+    white-space: pre;
+    top: 0;
+    right: 0;
+    padding: 0.3rem;
+    border: 2px solid var(--dark-color);
+    transform: translate(-20rem, -10px);
+    background-color: var(--color-1);
+}
+
+#form #user-input div.row input#password:focus:invalid ~ span::after {
+    content: attr(data-content);
 }
 
 /* checkbox */
@@ -258,12 +276,10 @@ a:active {
     height: 100%;
     top: 0;
     left: 0;
-
     transition: all 0.3s ease;
 }
 
 #form #user-input input[type="checkbox"]:checked::after {
-    box-sizing: border-box;
     overflow: hidden;
     height: 50%;
     width: 50%;
