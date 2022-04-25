@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="theme-color" content="#000000">
     <title>VERTEX BERLIN</title>
     <link rel="stylesheet" href="./style.css">
 </head>
@@ -30,8 +31,6 @@
             <p>
                 Required fields are marked with an asterisk (*).
             </p>
-
-
             <div class="row">
                 <div>
                     <input 
@@ -99,14 +98,14 @@
                         type="password" 
                         id="password" 
                         name="password"
-                        title="Please enter a valid password with UpperCase, LowerCase, Number/SpecialChar and min 8 Chars"
-                        oninvalid="setCustomValidity('Please enter a valid password with UpperCase, LowerCase, Number/SpecialChar and min 8 Chars')"
-                        pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
+                        title="Please enter a valid password with 2 uppercase, 2 lowercase, 2 number, 2 special and min 8 Chars"
+                        oninvalid="setCustomValidity('Please enter a valid password with 2 uppercase, 2 lowercase, 2 number, 2 special and min 8 Chars')"
+                        pattern="^(?=(?:.*\d){2,})(?=^.{10,}$)(?=(?:.*[A-Z]){2,})(?=(?:.*[a-z]){2,})(?=(?:.*[!@#$%^&*()_+\-=\[\]{};':\\|,.\/?]){2,}).*$"
                         placeholder=" "
                         required
                     >
                     <label for="password">Password*</label>
-                    <span></span>
+                    <span data-content="- Use a strong password"></span>
                 </div>
                 <div>
                     <input 
@@ -115,8 +114,8 @@
                         name="confirm-password"
                         title="Please enter the same password as before"
                         oninvalid="setCustomValidity('Please enter the same password as before')"
-                        pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
                         placeholder=" "
+                        novalidate
                         required
                         >
                     <label for="confirm-password">Confirm Password*</label>
@@ -131,5 +130,44 @@
         <button form="user-input" type="submit" class="signup text-mono">Sign Up</button>
         <p class="text">Already have an account? <a href="">Log in</a></p>
     </div>
+    <!-- password strength validation with js -->
+    <script>
+        const infoBox = document.querySelector('input#password ~ span', ':after');
+        const dataset = infoBox.dataset
+        const passwdBox = document.querySelector('input#password');
+        passwdBoxConfirm = document.querySelector('input#confirm-password');
+        dataset.content = '- At least 2 numbers\n- At least 10 characters\n- At least 2 uppercase letters\n- At least 2 lowercase letters\n- At least 2 special characters\n';
+
+        passwdBox.addEventListener('input', (e) => {
+            const value = inputBox.value;
+            dataset.content = '';
+
+            if (!value.match(/(?=(?:.*\d){2,}).*/)) {
+                dataset.content = dataset.content + '- At least 2 numbers\n';
+            }
+            if (!value.match(/(?=^.{10,}$)/)) {
+                dataset.content = dataset.content + "- At least 10 characters\n";
+            } 
+            if (!value.match(/(?=(?:.*[A-Z]){2,}).*/)) {
+                dataset.content = dataset.content + '- At least 2 uppercase letters\n';
+            }
+            if (!value.match(/(?=(?:.*[a-z]){2,}).*/)) {
+                dataset.content = dataset.content + '- At least 2 lowercase letters\n';
+            }
+            if (!value.match(/(?=(?:.*[!@#$%^&*()_+\-=\[\]{};':\\|,.\/?]){2,}).*/)) {
+                dataset.content = dataset.content + '- At least 2 special characters\n';
+            }
+            });
+            
+        passwdBoxConfirm.addEventListener('input', (e) => {
+            if (passwdBox.value == passwdBoxConfirm.value) {
+                passwdBoxConfirm.setCustomValidity('')
+            }
+            else {
+                passwdBoxConfirm.setCustomValidity('Passwords do not match.')
+            }
+        });
+
+    </script>
 </body>
 </html>
