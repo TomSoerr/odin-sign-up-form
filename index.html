@@ -1,174 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="theme-color" content="#000000">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="theme-color" content="#000000" />
     <title>VERTEX BERLIN</title>
-    <link rel="stylesheet" href="./style.css">
-</head>
-<body >
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
     <div id="sidebar">
-        <div id="logo">
-            <p id="vertex">VERTEX</p>
-            <p class="text-mono"> Nightclub</p>
-        </div>
+      <div id="logo">
+        <p id="vertex">VERTEX</p>
+        <p class="text-mono">Nightclub</p>
+      </div>
     </div>
     <div id="form">
-        <p class="text">
-            This is not a real online service! You know you need something
-            like this in your life to help you realize your deepest dreams. 
-            <br>
-            Sign up now to get started.
-            <br> 
-            <br>
-            You know you want to.
-        </p>
-        <form id="user-input" class="text-mono">
-
-            <p class="text">
-                Let's do this!
-            </p>
-            <p>
-                Required fields are marked with an asterisk (*).
-            </p>
-            <div class="row">
-                <div>
-                    <input 
-                        type="text" 
-                        id="first-name" 
-                        name="first-name" 
-                        title="Please enter a valid first name, example: John"
-                        oninvalid="setCustomValidity('Please enter a valid first name, example: John')"
-                        pattern="\w{2,}"
-                        placeholder=" "
-                        required 
-                        autofocus
-                    >
-                    <label for="first-name">First Name*</label>
-                    <span></span>
-                </div>
-                <div>
-                    <input 
-                        type="text" 
-                        id="last-name" 
-                        name="last-name" 
-                        title="Please enter a valid last name, example: Smith"
-                        oninvalid="setCustomValidity('Please enter a valid last name, example: Smith')"
-                        pattern="\w{3,}"
-                        placeholder=" "
-                        required
-                    >
-                    <label for="last-name">Last Name*</label>
-                    <span></span>
-                </div>
-            </div>
-            <div class="row">
-                <div>
-                    <input 
-                        type="email" 
-                        id="email" 
-                        name="email" 
-                        title="Please enter a valid email address, example: name@company.com"
-                        oninvalid="setCustomValidity('Please enter a valid email address, example: name@company.com')"
-                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-                        placeholder=" "
-                        required
-                    >
-                    <label for="email">E-Mail*</label>
-                    <span></span>
-                </div>
-                <div>
-                    <input 
-                        type="text" 
-                        d="phone" 
-                        name="phone" 
-                        inputmode="numeric"
-                        title="Please enter a valid phone number, example: 012345678901"
-                        oninvalid="setCustomValidity('Please enter a valid phone number, example: 012345678901')"
-                        pattern="\d{11,12}"
-                        placeholder=" "
-                    >
-                    <label for="phone">Phone Number</label>
-                    <span></span>
-                </div>
-            </div>
-            <div class="row">
-                <div>
-                    <input 
-                        type="password" 
-                        id="password" 
-                        name="password"
-                        title="Please enter a valid password with 2 uppercase, 2 lowercase, 2 number, 2 special and min 8 Chars"
-                        oninvalid="setCustomValidity('Please enter a valid password with 2 uppercase, 2 lowercase, 2 number, 2 special and min 8 Chars')"
-                        pattern="^(?=(?:.*\d){2,})(?=^.{10,}$)(?=(?:.*[A-Z]){2,})(?=(?:.*[a-z]){2,})(?=(?:.*[!@#$%^&*()_+\-=\[\]{};':\\|,.\/?]){2,}).*$"
-                        placeholder=" "
-                        required
-                    >
-                    <label for="password">Password*</label>
-                    <span data-content="- Use a strong password"></span>
-                </div>
-                <div>
-                    <input 
-                        type="password" 
-                        id="confirm-password" 
-                        name="confirm-password"
-                        title="Please enter the same password as before"
-                        oninvalid="setCustomValidity('Please enter the same password as before')"
-                        placeholder=" "
-                        novalidate
-                        required
-                        >
-                    <label for="confirm-password">Confirm Password*</label>
-                    <span></span>
-                </div>
-            </div>
-         <div class="checkbox">
-             <input type="checkbox" id="news" name="news">
-             <label for="news">Do you want to subscribe to our newsletter?</label>
-         </div>
-        </form>
-        <button form="user-input" type="submit" class="signup text-mono">Sign Up</button>
-        <p class="text">Go back to <a href="https://github.com/TomSoerr/odin-sign-up-form">GitHub</a>?</p>
+      <p class="text">
+        This is not a real online service! You know you need something like this
+        in your life to help you realize your deepest dreams.
+        <br />
+        Sign up now to get started.
+        <br />
+        <br />
+        You know you want to.
+      </p>
+      <form id="user-input" class="text-mono">
+        <p class="text">Let's do this!</p>
+        <p>Required fields are marked with an asterisk (*).</p>
+        <div class="row">
+          <div>
+            <input
+              type="text"
+              id="first-name"
+              name="first-name"
+              title="Please enter a valid first name, example: John"
+              oninvalid="setCustomValidity('Please enter a valid first name, example: John')"
+              pattern="\w{2,}"
+              placeholder=" "
+              required
+              autofocus
+            />
+            <label for="first-name">First Name*</label>
+            <span></span>
+          </div>
+          <div>
+            <input
+              type="text"
+              id="last-name"
+              name="last-name"
+              title="Please enter a valid last name, example: Smith"
+              oninvalid="setCustomValidity('Please enter a valid last name, example: Smith')"
+              pattern="\w{3,}"
+              placeholder=" "
+              required
+            />
+            <label for="last-name">Last Name*</label>
+            <span></span>
+          </div>
+        </div>
+        <div class="row">
+          <div>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              title="Please enter a valid email address, example: name@company.com"
+              oninvalid="setCustomValidity('Please enter a valid email address, example: name@company.com')"
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+              placeholder=" "
+              required
+            />
+            <label for="email">E-Mail*</label>
+            <span></span>
+          </div>
+          <div>
+            <input
+              type="text"
+              d="phone"
+              name="phone"
+              inputmode="numeric"
+              title="Please enter a valid phone number, example: 012345678901"
+              oninvalid="setCustomValidity('Please enter a valid phone number, example: 012345678901')"
+              pattern="\d{11,12}"
+              placeholder=" "
+            />
+            <label for="phone">Phone Number</label>
+            <span></span>
+          </div>
+        </div>
+        <div class="row">
+          <div>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              title="Please enter a valid password with 2 uppercase, 2 lowercase, 2 number, 2 special and min 8 Chars"
+              oninvalid="setCustomValidity('Please enter a valid password with 2 uppercase, 2 lowercase, 2 number, 2 special and min 8 Chars')"
+              pattern="^(?=(?:.*\d){2,})(?=^.{10,}$)(?=(?:.*[A-Z]){2,})(?=(?:.*[a-z]){2,})(?=(?:.*[!@#$%^&*()_+\-=\[\]{};':\\|,.\/?]){2,}).*$"
+              placeholder=" "
+              required
+            />
+            <label for="password">Password*</label>
+            <span data-content="- Use a strong password"></span>
+          </div>
+          <div>
+            <input
+              type="password"
+              id="confirm-password"
+              name="confirm-password"
+              title="Please enter the same password as before"
+              oninvalid="setCustomValidity('Please enter the same password as before')"
+              placeholder=" "
+              novalidate
+              required
+            />
+            <label for="confirm-password">Confirm Password*</label>
+            <span></span>
+          </div>
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" id="news" name="news" />
+          <label for="news">Do you want to subscribe to our newsletter?</label>
+        </div>
+      </form>
+      <button form="user-input" type="submit" class="signup text-mono">
+        Sign Up
+      </button>
+      <p class="text">
+        Go back to
+        <a href="https://github.com/TomSoerr/odin-sign-up-form">GitHub</a>?
+      </p>
     </div>
     <!-- password strength validation with js -->
     <script>
-        const infoBox = document.querySelector('input#password ~ span', ':after');
-        const dataset = infoBox.dataset;
-        const passwdBox = document.querySelector('input#password');
-        passwdBoxConfirm = document.querySelector('input#confirm-password');
-        dataset.content = '- At least 2 numbers\n- At least 10 characters\n- At least 2 uppercase letters\n- At least 2 lowercase letters\n- At least 2 special characters\n';
+      const infoBox = document.querySelector("input#password ~ span", ":after");
+      const dataset = infoBox.dataset;
+      const passwdBox = document.querySelector("input#password");
+      passwdBoxConfirm = document.querySelector("input#confirm-password");
+      dataset.content =
+        "- At least 2 numbers\n- At least 10 characters\n- At least 2 uppercase letters\n- At least 2 lowercase letters\n- At least 2 special characters\n";
 
-        
-        passwdBox.addEventListener('input', (e) => {
-            const value = passwdBox.value;
-            dataset.content = '';
+      passwdBox.addEventListener("input", (e) => {
+        const value = passwdBox.value;
+        dataset.content = "";
 
-            if (!value.match(/(?=(?:.*\d){2,}).*/)) {
-                dataset.content = dataset.content + '- At least 2 numbers\n';
-            }
-            if (!value.match(/(?=^.{10,}$)/)) {
-                dataset.content = dataset.content + "- At least 10 characters\n";
-            } 
-            if (!value.match(/(?=(?:.*[A-Z]){2,}).*/)) {
-                dataset.content = dataset.content + '- At least 2 uppercase letters\n';
-            }
-            if (!value.match(/(?=(?:.*[a-z]){2,}).*/)) {
-                dataset.content = dataset.content + '- At least 2 lowercase letters\n';
-            }
-            if (!value.match(/(?=(?:.*[!@#$%^&*()_+\-=\[\]{};':\\|,.\/?]){2,}).*/)) {
-                dataset.content = dataset.content + '- At least 2 special characters\n';
-            }
-            });
-            
-        passwdBoxConfirm.addEventListener('input', (e) => {
-            if (passwdBox.value == passwdBoxConfirm.value) {
-                passwdBoxConfirm.setCustomValidity('')
-            }
-            else {
-                passwdBoxConfirm.setCustomValidity('Passwords do not match.')
-            }
-        });
+        if (!value.match(/(?=(?:.*\d){2,}).*/)) {
+          dataset.content = dataset.content + "- At least 2 numbers\n";
+        }
+        if (!value.match(/(?=^.{10,}$)/)) {
+          dataset.content = dataset.content + "- At least 10 characters\n";
+        }
+        if (!value.match(/(?=(?:.*[A-Z]){2,}).*/)) {
+          dataset.content =
+            dataset.content + "- At least 2 uppercase letters\n";
+        }
+        if (!value.match(/(?=(?:.*[a-z]){2,}).*/)) {
+          dataset.content =
+            dataset.content + "- At least 2 lowercase letters\n";
+        }
+        if (
+          !value.match(/(?=(?:.*[!@#$%^&*()_+\-=\[\]{};':\\|,.\/?]){2,}).*/)
+        ) {
+          dataset.content =
+            dataset.content + "- At least 2 special characters\n";
+        }
+      });
 
+      passwdBoxConfirm.addEventListener("input", (e) => {
+        if (passwdBox.value == passwdBoxConfirm.value) {
+          passwdBoxConfirm.setCustomValidity("");
+        } else {
+          passwdBoxConfirm.setCustomValidity("Passwords do not match.");
+        }
+      });
     </script>
-</body>
+    <a
+      style="
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        color: black;
+        background-color: white;
+        text-decoration: none;
+        font-size: 16px;
+        font-family: sans-serif;
+        padding: 2px;
+        border: thin solid black;
+        text-decoration: underline;
+      "
+      href="https://tomsoerr.github.io/#/impressum"
+    >
+      Imprint
+    </a>
+    <span
+      style="
+        z-index: 1000;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        color: black;
+        background-color: white;
+        text-decoration: none;
+        font-size: 16px;
+        font-family: sans-serif;
+        padding: 2px;
+        border: thin solid black;
+      "
+    >
+      Not a commercial site, only for educational purposes.
+    </span>
+  </body>
 </html>

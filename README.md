@@ -8,6 +8,7 @@ This Sign-up Form has:
 - a password strength meter.
 
 ## Links
+- [Imprint](https://tomsoerr.github.io/#/impressum)
 - [Live Preview](https://tomsoerr.github.io/odin-sign-up-form/)
 - Link to the [Assignment](https://www.theodinproject.com/lessons/node-path-intermediate-html-and-css-sign-up-form)
 - See my next [Project](https://github.com/TomSoerr/odin-admin-dashboard)
